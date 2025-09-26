@@ -159,18 +159,20 @@ html {
     margin-left: 2px;
 }
 
+#header .mobile-menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 20px ;
     cursor: pointer;
 }
 
-#header .search-btn:hover
-{
-    background-color: #f44336;
-    
+#header .mobile-menu-btn:hover,
+#header .search-btn:hover {
+    background-color: #f44336;    
 }
 
+
+#header .menu-icon,
 #header .search-icon {
    color: #fff;
    font-size: 12px;
@@ -216,6 +218,8 @@ position: relative;
     padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-heading,
@@ -502,3 +506,5 @@ header.modal-header i {
         opacity: 1;
     }
 } 
+
+
