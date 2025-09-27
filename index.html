@@ -73,19 +73,19 @@
                 </p>
 
                 <div class="row member-list">
-                    <div class="col col-third text-center">
+                    <div class="col col-third text-center member-item">
                         <p class="member-name">
                             Name
                         </p>
                         <img src="./assets/img/img_bandmember.jpg" alt="Name" class="member-img">
                     </div>
-                    <div class="col col-third text-center">
+                    <div class="col col-third text-center member-item">
                         <p class="member-name">
                             Name
                         </p>
                         <img src="./assets/img/img_bandmember.jpg" alt="Name" class="member-img">
                     </div>
-                    <div class="col col-third text-center">
+                    <div class="col col-third text-center member-item">
                         <p class="member-name">
                             Name
                         </p>
@@ -115,7 +115,7 @@
 
                     <!-- Places -->
                     <div class="row places-list">
-                        <div class="col col-third">
+                        <div class="col col-third s-col-full mt-16">
                             <img src="./assets/img/download.webp" alt="Demo">
                             <div class="place-body">
                                 <h3 class="place-heading">New York</h3>
@@ -126,7 +126,7 @@
                             </div>
                         </div>
 
-                        <div class="col col-third">
+                        <div class="col col-third s-col-full mt-16">
                             <img src="./assets/img/download.webp" alt="Demo" class="place-img">
                             <div class="place-body">
                                 <h3 class="place-heading">New York</h3>
@@ -136,7 +136,7 @@
                                 <button href="#" class="btn js-buy-ticket">Buy Ticket</button>
                             </div>
                         </div>
-                        <div class="col col-third">
+                        <div class="col col-third s-col-full mt-16">
                             <img src="./assets/img/download.webp" alt="Demo">
                             <div class="place-body">
                                 <h3 class="place-heading">New York</h3>
@@ -271,6 +271,38 @@
             modalContainer.addEventListener('click', function (event) {
                 event.stopPropagation()
             })
+        </script>
+
+        <script>
+            var header = document.getElementById('header')
+            var mobileMenu = document.querySelector('.mobile-menu-btn')
+            var headerHeight = header.clientHeight
+
+            // Đóng/mở mobile menu
+            mobileMenu.onclick = function() {
+                var isClosed = header.clientHeight === headerHeight;
+                if (isClosed) {
+                    header.style.height = 'auto';
+                } else {
+                    header.style.height = null;
+                }
+            }
+
+            // Tự động đóng khi chọn menu
+            var menuItems = document.querySelectorAll('#nav li a[href*="#"]')
+            for (var i = 0; i < menuItems.length; i++) {
+                var menuItem = menuItems[i]
+                
+                menuItem.onclick = function () {
+                    var isParentMenu = this.nextElementSibling && this.classList.contains('subnav')
+                    if (isParentMenu) {
+                        event.preventDefault();
+                    } else {
+                        header.style.height = null;                    
+                    }
+                    
+                }
+            }
         </script>
 </body>
 

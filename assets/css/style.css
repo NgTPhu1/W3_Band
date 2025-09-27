@@ -90,7 +90,6 @@ html {
     right: 0;
     left:0;
     z-index: 2;
- 
 }
 
 #nav {
@@ -159,18 +158,33 @@ html {
     margin-left: 2px;
 }
 
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
 #header .mobile-menu-btn,
 #header .search-btn {
     float: right;
-    padding: 0 20px ;
+    padding: 0 21px ;
     cursor: pointer;
+    
 }
 
-#header .mobile-menu-btn:hover,
+
 #header .search-btn:hover {
     background-color: #f44336;    
 }
 
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;   
+}
+
+#header .mobile-menu-btn:hover .menu-icon {
+       color: #000;
+}
 
 #header .menu-icon,
 #header .search-icon {
@@ -183,7 +197,7 @@ html {
 position: relative;
   margin-top: 46px;
   padding-top: 50%;
-  background-image: url('/assets/img/hth.jpeg');
+  background-image: url('/W3_Band/assets/img/chicago.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -215,6 +229,7 @@ position: relative;
 
 #content .content-section{
     width: 800px;
+    max-width: 100%;
     padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto;
@@ -257,8 +272,7 @@ position: relative;
 }
 
 #content .member-item img {
-    width: 154px;
-    height: 170px;
+    /* width: 154px; */
     margin-top: 15px;
     border-radius: 4px;
   
